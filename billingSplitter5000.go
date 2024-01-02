@@ -44,10 +44,10 @@ func groupFilesInFolders(dirPath string) error {
 	for i, f := range files {
 		if i == 0 || i%15 == 0 {
 			folderName = nameGenerator()
-			os.Mkdir(dirPath + "/"+ folderName, 0755)
+			os.Mkdir(dirPath+"/"+folderName, 0755)
 		}
 
-		err := os.Rename(dirPath + "/" + f.Name(), dirPath + "/" + folderName + "/" + f.Name())
+		err := os.Rename(dirPath+"/"+f.Name(), dirPath+"/"+folderName+"/"+f.Name())
 
 		if err != nil {
 			return err
